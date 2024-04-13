@@ -639,9 +639,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "CartService": () => (/* binding */ CartService)
 /* harmony export */ });
-/* harmony import */ var _Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldInitSpec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldInitSpec.js */ 4482);
-/* harmony import */ var _Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldGet.js */ 8758);
-/* harmony import */ var _Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldSet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldSet.js */ 692);
+/* harmony import */ var _Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldInitSpec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldInitSpec.js */ 4482);
+/* harmony import */ var _Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldGet.js */ 8758);
+/* harmony import */ var _Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldSet_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classPrivateFieldSet.js */ 692);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 6317);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ 635);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 9196);
@@ -657,14 +657,14 @@ class CartService {
   /** Key - item id, value - ordered amount */
 
   constructor() {
-    (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldInitSpec_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _cartSource, {
+    (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldInitSpec_js__WEBPACK_IMPORTED_MODULE_0__["default"])(this, _cartSource, {
       writable: true,
       value: void 0
     });
     /** Key - item id, value - ordered amount */
-    (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldSet_js__WEBPACK_IMPORTED_MODULE_2__["default"])(this, _cartSource, new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({}));
+    (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldSet_js__WEBPACK_IMPORTED_MODULE_2__["default"])(this, _cartSource, new rxjs__WEBPACK_IMPORTED_MODULE_3__.BehaviorSubject({}));
     // eslint-disable-next-line @typescript-eslint/member-ordering
-    this.cart$ = (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).asObservable();
+    this.cart$ = (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).asObservable();
     // eslint-disable-next-line @typescript-eslint/member-ordering
     this.totalInCart$ = this.cart$.pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.map)(cart => {
       const values = Object.values(cart);
@@ -684,10 +684,10 @@ class CartService {
     this.updateCount(id, -1);
   }
   empty() {
-    (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next({});
+    (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next({});
   }
   updateCount(id, type) {
-    const val = (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).getValue();
+    const val = (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).getValue();
     const newVal = {
       ...val
     };
@@ -696,7 +696,7 @@ class CartService {
     }
     if (type === 1) {
       newVal[id] = ++newVal[id];
-      (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next(newVal);
+      (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next(newVal);
       return;
     }
     if (newVal[id] === 0) {
@@ -707,7 +707,7 @@ class CartService {
     if (!newVal[id]) {
       delete newVal[id];
     }
-    (0,_Users_dany_Learn_AWS_shop_angular_cloudfront_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next(newVal);
+    (0,_Users_dany_Learn_AWS_aws_practitioner_node_modules_babel_runtime_helpers_esm_classPrivateFieldGet_js__WEBPACK_IMPORTED_MODULE_1__["default"])(this, _cartSource).next(newVal);
   }
 }
 CartService.ɵfac = function CartService_Factory(t) {
@@ -1694,14 +1694,14 @@ const environment = {
     product: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
     order: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
     import: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
-    bff: 'https://.execute-api.eu-west-1.amazonaws.com/dev',
+    bff: 'https://kcdwh5ak1a.execute-api.us-east-1.amazonaws.com/dev',
     cart: 'https://.execute-api.eu-west-1.amazonaws.com/dev'
   },
   apiEndpointsEnabled: {
     product: false,
     order: false,
     import: false,
-    bff: false,
+    bff: true,
     cart: false
   }
 };
