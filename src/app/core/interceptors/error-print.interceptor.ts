@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
@@ -19,11 +20,20 @@ export class ErrorPrintInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       tap({
-        error: () => {
+        error: (err) => {
           const url = new URL(request.url);
+          let cause = 'Check the console for the details';
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 401) {
+              cause = 'Authentication failed. Please check your credentials.';
+            } else if (err.status === 403) {
+              cause =
+                'Authorization failed. You do not have the necessary permissions.';
+            }
+          }
 
           this.notificationService.showError(
-            `Request to "${url.pathname}" failed. Check the console for the details`,
+            `Request to "${url.pathname}" failed. ${cause}`,
             0
           );
         },
