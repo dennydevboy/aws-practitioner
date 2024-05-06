@@ -6,11 +6,14 @@ import { map } from 'rxjs/operators';
 import { Product } from './product.interface';
 
 import { ApiService } from '../core/api.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService extends ApiService {
+  headers = new HttpHeaders();
+
   createNewProduct(product: Product): Observable<Product> {
     if (!this.endpointEnabled('bff')) {
       console.warn(
@@ -19,6 +22,7 @@ export class ProductsService extends ApiService {
       return EMPTY;
     }
 
+    this.headers.set('Access-Control-Allow-Origin', '*');
     const url = this.getUrl('bff', 'products');
     return this.http.post<Product>(url, product);
   }
